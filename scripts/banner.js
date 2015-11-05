@@ -1,3 +1,22 @@
+
+
+require(['react', 'barium'], function(React, Barium) {
+
+require.config({
+	paths: {
+		"react" : "react.min",
+		"barium" : "barium.min" 
+	}
+});
+
+var styles = Barium.create({
+	banner:{
+		border:'1px solid #000', 
+		height:'100px', 
+		width:'100px'
+	}
+});
+
 var Banner = React.createClass({
 	getInitialState: function () {
 		return {
@@ -16,10 +35,12 @@ var Banner = React.createClass({
 		var background_color = settings["background_color"];
 
 		return (
-			<div style={{border:1px solid #000; height:100px; width:100px;}}>
+			<div style={styles.banner}>
 			</div>
 		);
 	}
 });
 
-ReactDOM.render(<Banner />, document.getElementByClassName('bg'));
+ReactDOM.render(<Banner />, document.getElementById('bg'));
+
+});
