@@ -16,8 +16,10 @@ var Banner = React.createClass({
 		var background_color = settings["background_color"];
 
 		return (
-			<div style={{}}>
+			<div style={{border:1px solid #000; height:100px; width:100px;}}>
 			</div>
 		);
 	}
 });
+
+ReactDOM.render(<Banner />, document.getElementByClassName('bg'));
