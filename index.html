@@ -1,62 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equi="Content-Type" content="text/html;charset=UTF-8" />
-		<meta name="viewport" content="width=320, initial-scale=1.0, maximum-scale=1.0" />
-		<script src="scripts/"></script>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<script type="text/javascript">
+            var sw=window.screen.width;
+            var ini_scale = parseInt(sw/7.5)/100;
+            document.write('<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width,initial-scale='+ini_scale+', maximum-scale=1.0, user-scalable=no"/>');
+        </script>
+		<script src="scripts/react.min.js"></script>
+		<script src="scripts/react-dom.min.js"></script>
 		<script src="scripts/JSXTransformer.js" type="text/javascript"></script>
-		<script src="scripts/require.js" type="text/javascript" data-main="scripts/banner"></script>
+		<script type="text/jsx" src="scripts/banner.js"></script>
+		<link href="styles/common.css" type="text/css" rel="stylesheet" />
 		<title>抽奖活动</title>
-		<script type="text/jsx" > //src="scripts/banner.js"
-			require(['react', 'barium'], function(React, Barium) {
-
-				require.config({
-					paths: {
-						"react" : "react.min",
-						"react-dom" : "react-dom.min",
-						"barium" : "barium.min" 
-					}
-				});
-
-				var styles = Barium.create({
-					banner:{
-						border:'1px solid #000', 
-						height:'100px', 
-						width:'100px'
-					}
-				});
-
-				var Banner = React.createClass({
-					getInitialState: function () {
-						return {
-							data: {
-								background_image: "img/bg.jpg",
-								background_color: "#000000",
-							}
-						};
-					},
-					componentDidMount: function () {
-
-					},
-					render: function() {
-						var settings = this.state.data;
-						var background_image = settings["background_image"];
-						var background_color = settings["background_color"];
-
-						return (
-							<div style={styles.banner}>
-							</div>
-						);
-					}
-				});
-
-				ReactDOM.render(<Banner />, document.getElementById('bg'));
-
-			});
-		</script>
 	</head>
 	<body>
-		<div id="bg">
-		</div>
+		<div id="bg"></div>
 	</body>
+	<script type="text/jsx">
+		ReactDOM.render(<Banner />, document.getElementById('bg'));
+	</script>
 </html>
