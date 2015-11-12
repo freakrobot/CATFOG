@@ -1,10 +1,22 @@
 var tblStyle = {
 	color: '#666666',
-	backgroundColor: '#1a1a1a'
+	fontSize: '28px',
+	backgroundColor: '#1a1a1a',
+	width: '98.5%',
+	textAlign: 'center',
+	margin: '0px 10px 10px 10px',
+}
+
+var tblHeaderStyle = {
+	fontSize: '32px',
+}
+
+var tblHeaderCellStyle = {
+	borderBottom: '1px solid #292929',
 }
 
 function parseTitle(field) {
-	return <th>
+	return <th style={tblHeaderCellStyle}>
 			{field}
 		   </th>
 }
@@ -29,13 +41,17 @@ var TableSection = React.createClass({
 		var tbl_title = this.props.title;
 		var tbl_data = this.props.data;
 		return (
-				<table>
-					<tr>
-						tbl.title.map(parseTitle);
-					</tr>
-					{
-						tbl_data.map(parseTblLine)
-					}
+				<table style={tblStyle}>
+					<tbody>
+						<tr style={tblHeaderStyle}>
+						{
+							tbl_title.map(parseTitle)
+						}
+						</tr>
+						{
+							tbl_data.map(parseTblLine)
+						}
+					</tbody>
 				</table>
 			)
 	}
