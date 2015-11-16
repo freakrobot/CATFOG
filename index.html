@@ -12,6 +12,7 @@
 		<script src="lib/JSXTransformer.js" type="text/javascript"></script>
 		<script type="text/jsx" src="scripts/banner.js"></script>
 		<script type="text/jsx" src="scripts/awards.js"></script>
+		<script type="text/jsx" src="scripts/galary.js"></script>
 		<script type="text/jsx" src="scripts/section_title.js"></script>
 		<script type="text/jsx" src="scripts/text_section.js"></script>
 		<script type="text/jsx" src="scripts/table_section.js"></script>
@@ -22,6 +23,53 @@
 		<div id="bg"></div>
 	</body>
 	<script type="text/jsx">
+		var remote_galary_data = [{
+							uri: "data/keyboard.png",
+							name: "雷蛇键鼠套装"
+						},{
+							uri: "data/notebook.png",
+							name: "遁甲天书-天遁"
+						},{
+							uri: "data/personal_letter.png",
+							name: "定制手札"
+						},{
+							uri: "data/personal_letter.png",
+							name: "定制手札"
+						},{
+							uri: "data/mouse.png",
+							name: "雷蛇鼠标"
+						},{
+							uri: "data/bottle.png",
+							name: "定制水杯"
+						},{
+							uri: "data/charge_pal.png",
+							name: "定制充电宝"
+						},{
+							uri: "data/notebook.png",
+							name: "遁甲天书-天遁"
+						},{
+							uri: "data/personal_letter.png",
+							name: "定制手札"
+						},{
+							uri: "data/personal_letter.png",
+							name: "定制手札"
+						},{
+							uri: "data/mouse.png",
+							name: "雷蛇鼠标"
+						},{
+							uri: "data/bottle.png",
+							name: "定制水杯"
+						},{
+							uri: "data/personal_letter.png",
+							name: "定制手札"
+						},{
+							uri: "data/personal_letter.png",
+							name: "定制手札"
+						},{
+							uri: "data/mouse.png",
+							name: "雷蛇鼠标"
+						}];
+
 		var txt = <div>
 					  <p>1、活动时间：2015年8月1日-8月30日</p>
 					  <p>2、玩家一天只能分享3次，最多得到3次抽奖次数。抽奖次数可以累积。</p>
@@ -35,6 +83,7 @@
 				<Banner />
 				<SectionTitle uri={'img/section1.png'} />
 				<Awards />
+				<Galary data={remote_galary_data} />
 				<SectionTitle uri={'img/section2.png'} />
 				<TextSection text={txt} />
 				<SectionTitle uri={'img/section3.png'} />

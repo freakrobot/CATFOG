@@ -1,0 +1,1 @@
+var Cover = React.createClass()
